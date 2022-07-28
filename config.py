@@ -14,6 +14,7 @@ import psutil
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import collections
+import glob
 from os.path import exists
 
 #######################################################################
@@ -36,7 +37,7 @@ CERTS_PATH = '/Users/georgemaksour/Docs/betfair_trader/certs/'
 USERNAME = "gemaksour"
 PASSWORD = "J#ackson1@"
 APP_KEY = "XrF0OJ16HwxpJrIW"
-#APP_KEY = "oy4o5ru8lQlmxjoL"
+# APP_KEY = "oy4o5ru8lQlmxjoL"
 SSOID = '+cLLGOD2r3ShKXf86AUJIzDHfcOM1gG1VXo8Ft1eDmE='
 
 #######################################################################
@@ -54,12 +55,12 @@ YAHOO_PASSCODE = 'rhvkukyclmbdttym'
 
 #######################################################################
 # Conditional Global Variables
-START_HOUR = 9
-END_HOUR = 16
-LOGGING_FILE_PATH = 'output/logs.txt'
+DATA_PULL = True
+DATA_PATH = 'data_files/'
+LOGGING_FILE_PATH: str = 'output/logs.txt'
 HORSE_RACING_ID = 7
 GREYHOUND_RACING_ID = 4339
-MINUTES_AHEAD = 21
+MINUTES_AHEAD = 25
 AVOID_MARKETS = ['To Be Placed', 'Exacta', 'Quinella']
 NO_OF_SIMULATIONS = 1000000
 STAKE_SIZE = 100
@@ -73,8 +74,16 @@ H2H_COLS = ['Selection ID', 'Best Back Price', 'Best Back Size']
 WIN_RENAME = ['selection_id', 'win_back_price']
 H2H_RENAME = ['selection_id', 'h2h_price', 'h2h_volume']
 
-BET_SIZE = 1
 
+#######################################################################
+BACK_PROBABILITY = 'back_probability'
+LAY_PROBABILITY = 'lay_probability'
+BETFAIR_BEST_BACK = 'Best Back Price'
+BETFAIR_BEST_LAY = 'Best Lay Price'
+BACK_LOOK_BACK = 'back_look_back_probs'
+LAY_LOOK_BACK = 'lay_look_back_probs'
+
+BET_SIZE = 1
 
 TICK_SIZES = {
     1: 0.01,
@@ -89,6 +98,3 @@ TICK_SIZES = {
     100: 10.0,
     1000: 1000
 }
-
-
-

@@ -17,7 +17,7 @@ class TRACKER:
                     list_of_df = self.market_dict[market_id]
                     market_df = pd.concat(list_of_df)
                     name_id = str(market_id).replace('.', '_')
-                    market_df.to_csv(f'output/{name_id}.csv')
+                    market_df.to_csv(f'data_files/{name_id}.csv')
                     self.market_dict.pop(market_id)
 
     def update_market(self, market_id, frame: pd.DataFrame):
