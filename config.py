@@ -55,8 +55,8 @@ YAHOO_PASSCODE = 'rhvkukyclmbdttym'
 
 #######################################################################
 # Market Global Variables
-DATA_PULL = True
-DATA_PATH = 'data_files/'
+DATA_PULL = False
+DATA_PATH = 'data_files/*'
 LOGGING_FILE_PATH: str = 'output/logs.txt'
 HORSE_RACING_ID = 7
 GREYHOUND_RACING_ID = 4339
@@ -70,6 +70,9 @@ MAX_RESULTS = 1000
 
 #######################################################################
 # Pre-processing global variables
+PROCESSED_PATH = 'preprocessed_files/'
+SELECTION_ID = 'Selection ID'
+TIME_DELTA = 'time_delta'
 BACK_PROBABILITY = 'back_probability'
 LAY_PROBABILITY = 'lay_probability'
 BETFAIR_BEST_BACK = 'Best Back Price'
@@ -77,6 +80,13 @@ BETFAIR_BEST_LAY = 'Best Lay Price'
 BACK_LOOK_BACK = 'back_look_back_probs'
 LAY_LOOK_BACK = 'lay_look_back_probs'
 AVG_LAY_BACK = 'lay_back_average'
+EMA_ONE_BACK = 'ema_back_one'
+EMA_ONE_LAY = 'ema_lay_one'
+EMA_TWO_BACK = 'ema_back_two'
+EMA_TWO_LAY = 'ema_lay_two'
+MACD_BACK = 'macd_back'
+MACD_LAY = 'macd_lay'
+
 
 #######################################################################
 # Trading global variables

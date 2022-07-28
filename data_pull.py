@@ -45,13 +45,15 @@ def data_pull(trading, event_tracker):
         market_books = retrieve_market_books(host=trading, market_id=market_id)
         for market in market_books:
             if check_runner_book(market.runners):
-                continue
+                break
             temp_df = process_runner_books(market.runners)
             event_tracker.update_market(market_id=market_id, frame=temp_df)
 
+    event_tracker.debug()
     print("One iteration took", time.time() - start_time, "seconds to run")
     print('RAM memory % used:', psutil.virtual_memory()[2])
 
     end_time = time.time() - start_time
-    time.sleep(5 - end_time)
+    if 5 - end_time > 0:
+        time.sleep(5 - end_time)
     return 1
