@@ -30,5 +30,13 @@ def n_minute_average_prob(data: pd.DataFrame, n: float) -> pd.DataFrame:
     if n > len(data) - 1: return data
     data[BACK_LOOK_BACK] = data[BETFAIR_BEST_BACK].rolling(window=n).mean()
     data[LAY_LOOK_BACK] = data[BETFAIR_BEST_LAY].rolling(window=n).mean()
+    return data
 
+
+def average_lay_back_lookback(data: pd.DataFrame) -> pd.DataFrame:
+    data[AVG_LAY_BACK] = (data[BACK_LOOK_BACK] + data[LAY_LOOK_BACK])/2
+    return data
+
+
+def moving_average_convergence_divergence(data: pd.DataFrame) -> pd.DataFrame:
 

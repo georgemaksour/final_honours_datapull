@@ -54,7 +54,7 @@ YAHOO_PASSCODE = 'rhvkukyclmbdttym'
 
 
 #######################################################################
-# Conditional Global Variables
+# Market Global Variables
 DATA_PULL = True
 DATA_PATH = 'data_files/'
 LOGGING_FILE_PATH: str = 'output/logs.txt'
@@ -68,21 +68,18 @@ BASE_MARKET_ID = -1
 MAX_RESULTS = 1000
 
 
-WIN_COLS = ['Selection ID', 'Best Back Price']
-H2H_COLS = ['Selection ID', 'Best Back Price', 'Best Back Size']
-
-WIN_RENAME = ['selection_id', 'win_back_price']
-H2H_RENAME = ['selection_id', 'h2h_price', 'h2h_volume']
-
-
 #######################################################################
+# Pre-processing global variables
 BACK_PROBABILITY = 'back_probability'
 LAY_PROBABILITY = 'lay_probability'
 BETFAIR_BEST_BACK = 'Best Back Price'
 BETFAIR_BEST_LAY = 'Best Lay Price'
 BACK_LOOK_BACK = 'back_look_back_probs'
 LAY_LOOK_BACK = 'lay_look_back_probs'
+AVG_LAY_BACK = 'lay_back_average'
 
+#######################################################################
+# Trading global variables
 BET_SIZE = 1
 
 TICK_SIZES = {
