@@ -59,3 +59,4 @@ def moving_average_convergence_divergence(data: pd.DataFrame, p1: int, p2: int) 
 def weight_of_money(data: pd.DataFrame) -> pd.DataFrame:
     return data
 
+

@@ -29,3 +29,4 @@ class TRACKER:
 
     def debug(self):
         print(self.market_dict.keys())
+

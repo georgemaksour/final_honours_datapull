@@ -32,3 +32,4 @@ def send_email(subject='Important', content='testing', footer='~George'):
 def send_message(host, message="Hello World"):
     host.messages.create(to=MY_NUMBER, from_=TWILIO_PHONE_NUMBER, body=message)
 
+

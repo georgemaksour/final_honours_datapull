@@ -118,3 +118,4 @@ def plot_function(i):
     ax1.scatter(len(ram)-1, ram[-1])
     ax1.text(len(ram)-1, ram[-1]+2, "{}%".format(ram[-1]))
     ax1.set_ylim(0,100)
+
