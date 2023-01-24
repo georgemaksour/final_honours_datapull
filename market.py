@@ -116,7 +116,7 @@ def retrieve_market_books(host, market_id):
 
 
 def check_runner_book(runner_books):
-    return any([len(runner.ex.available_to_back) == 0 for runner in runner_books])
+    return any([len(runner.ex.available_to_back) == 0 for runner in runner_books]) or any([len(runner.ex.available_to_lay) == 0 for runner in runner_books])
 
 
 def process_runner_books(runner_books):
