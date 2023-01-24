@@ -87,6 +87,8 @@ EMA_TWO_BACK = 'ema_back_two'
 EMA_TWO_LAY = 'ema_lay_two'
 MACD_BACK = 'macd_back'
 MACD_LAY = 'macd_lay'
+MIN_MAX_BACK = 'min_max_back'
+MIN_MAX_LAY = 'min_max_lay'
 
 
 #######################################################################
