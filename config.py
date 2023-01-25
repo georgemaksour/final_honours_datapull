@@ -78,6 +78,8 @@ BACK_PROBABILITY = 'back_probability'
 LAY_PROBABILITY = 'lay_probability'
 BETFAIR_BEST_BACK = 'Best Back Price'
 BETFAIR_BEST_LAY = 'Best Lay Price'
+BETFAIR_BEST_BACK_SIZE = 'Best Back Size'
+BETFAIR_BEST_LAY_SIZE = 'Best Lay Size'
 BACK_LOOK_BACK = 'back_look_back_probs'
 LAY_LOOK_BACK = 'lay_look_back_probs'
 AVG_LAY_BACK = 'lay_back_average'
@@ -89,6 +91,9 @@ MACD_BACK = 'macd_back'
 MACD_LAY = 'macd_lay'
 MIN_MAX_BACK = 'min_max_back'
 MIN_MAX_LAY = 'min_max_lay'
+VDI_BACK = 'vdi_back'
+VDI_LAY = 'vdi_lay'
+WINDOW = 15
 
 
 #######################################################################

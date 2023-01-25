@@ -55,8 +55,18 @@ def moving_average_convergence_divergence(data: pd.DataFrame, p1: int, p2: int) 
     data[MACD_LAY] = data[EMA_ONE_LAY] - data[EMA_TWO_LAY]
     return data
 
-
-def weight_of_money(data: pd.DataFrame) -> pd.DataFrame:
+def volatility_demeaned_returns(data: pd.DataFrame) -> pd.DataFrame:
+    ann_factor = len(data.index) / WINDOW
+    data[VDI_BACK] = np.sqrt(np.log(data[BETFAIR_BEST_BACK]).diff().rolling(window).var() * ann_factor)
+    data[VDI_LAY] = np.sqrt(np.log(data[BETFAIR_BEST_LAY]).diff().rolling(window).var() * ann_factor)
     return data
 
 
+def weight_of_money(data: pd.DataFrame) -> pd.DataFrame:
+    data[WOM] = (data[BETFAIR_BEST_BACK_SIZE]*data[BETFAIR_BEST_BACK] + data[BETFAIR_BEST_LAY_SIZE]*data[BETFAIR_BEST_LAY])/(data[BETFAIR_BEST_BACK_SIZE] + data[BETFAIR_BEST_LAY_SIZE])
+    return data
+
+def min_max_normalisation(data: pd.DataFrame) -> pd.DataFrame:
+    data[MIN_MAX_BACK] = (data[BETFAIR_BEST_BACK] - data[BETFAIR_BEST_BACK].min()) / (data[BETFAIR_BEST_BACK].max() - data[BETFAIR_BEST_BACK].min())
+    data[MIN_MAX_LAY] = (data[BETFAIR_BEST_LAY] - data[BETFAIR_BEST_LAY].min()) / (data[BETFAIR_BEST_LAY].max() - data[BETFAIR_BEST_LAY].min())
+    return data
