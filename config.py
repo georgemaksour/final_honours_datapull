@@ -56,7 +56,7 @@ YAHOO_PASSCODE = 'rhvkukyclmbdttym'
 
 #######################################################################
 # Market Global Variables
-DATA_PULL = False
+DATA_PULL = True
 DATA_PATH = 'data_files/*'
 LOGGING_FILE_PATH: str = 'output/logs.txt'
 HORSE_RACING_ID = 7
