@@ -1,0 +1,6 @@
+betfairlightweight==2.16.6
+matplotlib==3.5.2
+numpy==1.23.1
+pandas==1.4.3
+psutil==5.9.1
+twilio==7.12.0
